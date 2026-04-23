@@ -21,7 +21,7 @@ public class UserResource {
 
         User user = service.findById(id);
         if (user == null){
-            throw new userNotFoundException("id :"+id);
+            throw new UserNotFoundException("id :"+id);
         }
         return user;
     }
