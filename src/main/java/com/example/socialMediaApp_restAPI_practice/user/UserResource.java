@@ -24,5 +24,4 @@ public class UserResource {
     public void createUser(@RequestBody User user){
         service.save(user);
     }
-
 }
