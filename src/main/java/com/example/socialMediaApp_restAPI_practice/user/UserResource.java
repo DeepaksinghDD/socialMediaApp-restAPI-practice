@@ -1,7 +1,6 @@
 package com.example.socialMediaApp_restAPI_practice.user;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,4 +16,13 @@ public class UserResource {
     public List<User> retrieveAllUser(){
             return service.findAll();
     }
+    @GetMapping("/users/{id}" )
+    public User retrieveById(@PathVariable int id){
+        return  service.findById(id);
+    }
+    @PostMapping("/users")
+    public void createUser(@RequestBody User user){
+        service.save(user);
+    }
+
 }
